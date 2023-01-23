@@ -1,5 +1,4 @@
-export default function Task() {
-    const checked = true
+export default function Task({task}) {
     return (
         <div className="flex flex-row rounded-lg shadow-md h-[60px] items-center mx-10">
             <div className="pl-5 pr-5 pt-4 pb-3">
@@ -9,7 +8,7 @@ export default function Task() {
             </div>
             <div>
                 <h1 className="font-thin">
-                    Task Test, idk
+                    {task}
                 </h1>
             </div>
         </div>
