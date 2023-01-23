@@ -32,6 +32,12 @@ export default function Home() {
     setNewTaskName("");
     setNewTaskDetails("");
   }
+
+  const handleRemove = (index) => {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  }
   
   return (
     <h1 className="bg-[#FCFCFC] h-screen w-screen">
@@ -46,7 +52,7 @@ export default function Home() {
       <div className="mb-10">
       {tasks.map((task, index) => (
           <div className="mt-10" key={index}>
-            <Task task={task.name} />
+            <Task task={task.name} details={task.details} deletetask={() => handleRemove(index)} />
           </div>
         ))}
       </div>
