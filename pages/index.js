@@ -32,13 +32,11 @@ export default function Home() {
     setNewTaskName("");
     setNewTaskDetails("");
   }
-
   const handleRemove = (index) => {
     const newTasks = [...tasks];
     newTasks.splice(index, 1);
     setTasks(newTasks);
   }
-  
   return (
     <h1 className="bg-[#FCFCFC] h-screen w-screen">
       <div className="top-0 sticky">
