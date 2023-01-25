@@ -96,11 +96,11 @@ export default function Task({ task, details, deletetask }) {
                                     (() => {
                                         if (details === "") {
                                             return (
-                                                <h1 className="text-[#737373] px-2 py-1">Is nothing here...</h1>
+                                                <h1 className="text-[#737373] px-2 py-1 font-thin">Is nothing here...</h1>
                                             )
                                         } else {
                                             return (
-                                                <h1 className="px-2 py-1">{details}</h1>
+                                                <h1 className="px-2 py-1 font-thin">{details}</h1>
                                             )
                                         }
                                     })()
