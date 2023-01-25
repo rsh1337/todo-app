@@ -10,12 +10,12 @@ export default function Task({ task, details, deletetask }) {
         <div className="rounded-lg shadow-md mx-10">
             <Disclosure>
                 <div className="flex flex-row items-center h-[60px]">
-                    <div className="pl-5 pr-5 py-3 transition-all">
+                    <div className="transition-all">
                         {
                             (() => {
                                 if (isShowing) {
                                     return (
-                                        <div onClick={() => { setIsShowing(!isShowing), setIsDeleting(false) }}>
+                                        <div onClick={() => { setIsShowing(!isShowing), setIsDeleting(false) }} className='px-5 py-3'>
                                             <svg width="17" height="17" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_15_7)">
                                                     <path d="M5.34916 8.65083L8.65082 5.34917M8.65082 8.65083L5.34916 5.34917M6.99999 12.8333C10.2083 12.8333 12.8333 10.2083 12.8333 7C12.8333 3.79167 10.2083 1.16667 6.99999 1.16667C3.79166 1.16667 1.16666 3.79167 1.16666 7C1.16666 10.2083 3.79166 12.8333 6.99999 12.8333Z" stroke="#B3B3B3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -30,20 +30,24 @@ export default function Task({ task, details, deletetask }) {
                                     )
                                 } else {
                                     return (
-                                        <div className='transition-all'>
+                                        <div>
                                             {
                                                 (() => {
                                                     if (!isChecked) {
                                                         return (
-                                                            <svg onClick={() => setIsChecked(true)} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <circle cx="8" cy="8" r="7.5" fill="#FAFAFA" stroke="#B3B3B3" />
-                                                            </svg>
+                                                            <div className="px-5 py-3 transition-all" onClick={() => setIsChecked(true)}>
+                                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <circle cx="8" cy="8" r="7.5" fill="#FAFAFA" stroke="#B3B3B3" />
+                                                                </svg>
+                                                            </div>
                                                         )
                                                     } else {
                                                         return (
-                                                            <svg onClick={() => setIsChecked(false)} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                                                                <path d="M12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M15.1464466,9.14644661 C15.3417088,8.95118446 15.6582912,8.95118446 15.8535534,9.14644661 C16.0488155,9.34170876 16.0488155,9.65829124 15.8535534,9.85355339 L10.8535534,14.8535534 C10.6582912,15.0488155 10.3417088,15.0488155 10.1464466,14.8535534 L8.14644661,12.8535534 C7.95118446,12.6582912 7.95118446,12.3417088 8.14644661,12.1464466 C8.34170876,11.9511845 8.65829124,11.9511845 8.85355339,12.1464466 L10.5,13.7928932 L15.1464466,9.14644661 Z" />
-                                                            </svg>
+                                                            <div className="px-5 py-3 transition-all" onClick={() => setIsChecked(false)}>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                                                                    <path d="M12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M15.1464466,9.14644661 C15.3417088,8.95118446 15.6582912,8.95118446 15.8535534,9.14644661 C16.0488155,9.34170876 16.0488155,9.65829124 15.8535534,9.85355339 L10.8535534,14.8535534 C10.6582912,15.0488155 10.3417088,15.0488155 10.1464466,14.8535534 L8.14644661,12.8535534 C7.95118446,12.6582912 7.95118446,12.3417088 8.14644661,12.1464466 C8.34170876,11.9511845 8.65829124,11.9511845 8.85355339,12.1464466 L10.5,13.7928932 L15.1464466,9.14644661 Z" />
+                                                                </svg>
+                                                            </div>
                                                         )
                                                     }
                                                 })()
