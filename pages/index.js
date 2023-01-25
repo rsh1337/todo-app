@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/header";
 import Task from "../components/task";
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
