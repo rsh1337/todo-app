@@ -9,12 +9,12 @@ export default function Task({ task, details, deletetask }) {
             <div className="rounded-lg shadow-md mx-10">
                 <Disclosure>
                     <div className="flex flex-row items-center h-[60px]">
-                        <div className="pl-5 pr-5 py-3">
+                        <div className="pl-5 pr-5 py-3 transition-all">
                             {
                                 (() => {
                                     if (isShowing) {
                                         return (
-                                            <div onClick={() => setIsShowing(!isShowing)}>
+                                            <div onClick={() => {setIsShowing(!isShowing), setIsDeleting(false)}}>
                                                 <svg width="17" height="17" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#clip0_15_7)">
                                                         <path d="M5.34916 8.65083L8.65082 5.34917M8.65082 8.65083L5.34916 5.34917M6.99999 12.8333C10.2083 12.8333 12.8333 10.2083 12.8333 7C12.8333 3.79167 10.2083 1.16667 6.99999 1.16667C3.79166 1.16667 1.16666 3.79167 1.16666 7C1.16666 10.2083 3.79166 12.8333 6.99999 12.8333Z" stroke="#B3B3B3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -40,7 +40,7 @@ export default function Task({ task, details, deletetask }) {
                             }
                         </div>
                         <div className="truncate w-full">
-                            <Disclosure.Button onClick={() => setIsShowing((isShowing) => !isShowing)} className="font-thin text-left py-3 truncate w-full">
+                            <Disclosure.Button onClick={() => {setIsShowing((isShowing) => !isShowing), setIsDeleting(false)}} className="font-thin text-left py-3 truncate w-full">
                                 {task}
                             </Disclosure.Button>
                         </div>
@@ -89,7 +89,7 @@ export default function Task({ task, details, deletetask }) {
                                         )
                                     } else {
                                         return (
-                                            <button className="bg-[#FF8787] py-[10px] px-2 text-xs font-medium rounded-md flex flex-row items-center transition-all" onClick={deletetask}>
+                                            <button className="bg-[#FF8787] py-[10px] px-2 text-sm font-medium rounded-md flex flex-row items-center transition-all" onClick={deletetask}>
                                             Are you sure?
                                         </button>
                                         )
