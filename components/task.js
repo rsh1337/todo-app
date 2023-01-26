@@ -121,9 +121,11 @@ export default function Task({ name, details, deletetask, checked, ischecked }) 
                                                 )
                                             } else {
                                                 return (
-                                                    <button className="bg-[#FF8787] py-[10px] px-2 text-sm font-medium rounded-md flex flex-row items-center transition-all" onClick={deletetask}>
+                                                    <div onClick={() => {setIsDeleting(false)}}>
+                                                    <button className="bg-[#FF8787] py-[10px] px-2 text-sm font-medium rounded-md flex flex-row items-center transition-all" onClick={deletetask} >
                                                         Are you sure?
                                                     </button>
+                                                    </div>
                                                 )
                                             }
                                         })()
