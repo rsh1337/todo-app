@@ -4,6 +4,7 @@ import { useState } from 'react'
 export default function Task({ name, details, deletetask, checked, ischecked }) {
     const [isDeleting, setIsDeleting] = useState(false)
     const [isShowing, setIsShowing] = useState(false)
+
     return (
         <div className="rounded-lg shadow-md mx-10">
             <Disclosure>
