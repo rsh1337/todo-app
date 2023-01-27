@@ -68,7 +68,7 @@ export default function Home() {
       <div className="top-0 sticky">
         <Header />
       </div>
-      <div className="flex justify-end fixed bottom-0 w-screen">
+      <div className="fixed bottom-0 right-0">
         <Popover>
           {({ isOpen }) => (
             <>

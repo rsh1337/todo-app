@@ -69,7 +69,7 @@ export default function Home() {
       <h1 className="flex justify-center items-center bg-red-400">You are offline</h1>
         <Header />
       </div>
-      <div className="flex justify-end fixed bottom-0 w-screen">
+      <div className="fixed bottom-0 right-0">
         <Popover>
           {({ isOpen }) => (
             <>
