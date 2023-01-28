@@ -16,6 +16,7 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
   const [newTaskName, setNewTaskName] = useState("");
   const [newTaskDetails, setNewTaskDetails] = useState("");
+  const [editingTask, setEditingTask] = useState(-1);
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
@@ -63,6 +64,9 @@ export default function Home() {
     setTasks(updatedTasks);
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
+  const handleEdit = (index) => {
+    setEditingTaskIndex(index);
+  }
   return (
     <div className="bg-[#FCFCFC] h-screen w-screen">
       <div className="top-0 sticky">

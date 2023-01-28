@@ -52,7 +52,6 @@ export default function Task({ name, details, deletetask, checked, ischecked }) 
                                                 })()
                                             }
                                         </div>
-
                                     )
                                 }
                             })()
