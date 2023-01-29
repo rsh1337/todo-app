@@ -189,13 +189,13 @@ export default function Task({ name, details, deletetask, checked, ischecked, se
                                     (() => {
                                         if (!checked) {
                                             return (
-                                                <div className="font-thin text-left py-3 truncate transition-all">
+                                                <div className="font-thin text-left py-3 truncate transition-all w-screen">
                                                     {name}
                                                 </div>
                                             )
                                         } else {
                                             return (
-                                                <div className="font-thin text-left py-3 truncate line-through transition-all">
+                                                <div className="font-thin text-left py-3 truncate line-through w-screen transition-all">
                                                     {name}
                                                 </div>
                                             )
@@ -234,7 +234,7 @@ export default function Task({ name, details, deletetask, checked, ischecked, se
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0">
                             <div>
-                                <div className="flex flex-col">
+                                <div className="flex flex-col divide-solid divide-y">
                                     <div className='transition-all'>
                                         {
                                             (() => {
@@ -266,7 +266,7 @@ export default function Task({ name, details, deletetask, checked, ischecked, se
                                             })()
                                         }
                                     </div>
-                                    <button className="bg-[#F6F6F6] py-1 px-4 text-sm font-medium rounded-md flex flex-col items-center" onClick={setEditingTask}>
+                                    <button className="bg-[#F6F6F6] py-[10px] px-4 text-sm font-medium rounded-md flex flex-col items-center" onClick={setEditingTask}>
                                         <svg className="mr-1" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_15_13)">
                                                 <path d="M8.74999 13.2708H5.24999C2.08249 13.2708 0.729156 11.9175 0.729156 8.75001V5.25001C0.729156 2.08251 2.08249 0.729172 5.24999 0.729172H6.41666C6.65582 0.729172 6.85416 0.927505 6.85416 1.16667C6.85416 1.40584 6.65582 1.60417 6.41666 1.60417H5.24999C2.56082 1.60417 1.60416 2.56084 1.60416 5.25001V8.75001C1.60416 11.4392 2.56082 12.3958 5.24999 12.3958H8.74999C11.4392 12.3958 12.3958 11.4392 12.3958 8.75001V7.58334C12.3958 7.34417 12.5942 7.14584 12.8333 7.14584C13.0725 7.14584 13.2708 7.34417 13.2708 7.58334V8.75001C13.2708 11.9175 11.9175 13.2708 8.74999 13.2708Z" fill="#575757" />

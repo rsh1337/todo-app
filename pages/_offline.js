@@ -65,7 +65,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#FCFCFC] h-screen w-screen md: w-full">
+    <div className="bg-[#FCFCFC] h-screen w-screen">
       <div className="top-0 sticky">
         <h1 className="flex justify-center items-center bg-red-400">You are offline</h1>
         <Header />
@@ -188,7 +188,7 @@ export default function Home() {
           )}
         </Popover>
       </div>
-      <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-[7rem] md:mr-[7rem]">
         {tasks.map((task, index) => (
           <div className="mt-5 mb-10" key={index}>
             <Task
