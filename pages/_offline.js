@@ -64,6 +64,19 @@ export default function Home() {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
+  const handleEditSubmit = (e) => {
+    e.preventDefault();
+    const updatedTasks = [...tasks];
+    updatedTasks = {
+      name: newTaskName,
+      details: newTaskDetails,
+    };
+    setTasks(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    setNewTaskName("");
+    setNewTaskDetails("");
+  };
+
   return (
     <div className="bg-[#FCFCFC] h-screen w-screen">
       <div className="top-0 sticky">

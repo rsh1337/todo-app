@@ -47,6 +47,18 @@ export default function Home() {
     setTasks(newTasks);
   };
 
+  const handleEditSubmit = (index) => {
+    const updatedTasks = tasks.map((task, i) => {
+      if (i === index) {
+        task.name = newTaskName;
+        task.details = newTaskDetails
+      }
+      console.log(task.checked);
+      return task;
+    });
+    setTasks(updatedTasks);
+  };
+
   const handleCheck = (index) => {
     const updatedTasks = tasks.map((task, i) => {
       if (i === index) {
@@ -196,6 +208,12 @@ export default function Home() {
               deletetask={() => handleRemove(index)}
               checked={task.checked}
               ischecked={() => handleCheck(index)}
+              editingTask={() => handleEdit(index)}
+              handleEditSubmit_edit={() => handleEditSubmit(index)}
+              newTaskName_edit={newTaskName}
+              newTaskDetails_edit={newTaskDetails}
+              setNewTaskDetails_edit={setNewTaskDetails}
+              setNewTaskName_edit={setNewTaskName}
             />
           </div>
         ))}
