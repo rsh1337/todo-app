@@ -47,6 +47,18 @@ export default function Home() {
     setTasks(newTasks);
   };
 
+  const handleEditSubmit = (index) => {
+    const updatedTasks = tasks.map((task, i) => {
+      if (i === index) {
+        task.name = newTaskName;
+        task.details = newTaskDetails
+      }
+      console.log(task.checked);
+      return task;
+    });
+    setTasks(updatedTasks);
+  };
+
   const handleCheck = (index) => {
     const updatedTasks = tasks.map((task, i) => {
       if (i === index) {
@@ -64,23 +76,10 @@ export default function Home() {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
-  const handleEditSubmit = (e) => {
-    e.preventDefault();
-    const updatedTasks = [...tasks];
-    updatedTasks = {
-      name: newTaskName,
-      details: newTaskDetails,
-    };
-    setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    setNewTaskName("");
-    setNewTaskDetails("");
-  };
-
   return (
     <div className="bg-[#FCFCFC] h-screen w-screen">
       <div className="top-0 sticky">
-        <h1 className="flex justify-center items-center bg-red-400">You are offline</h1>
+      <h1 className="flex justify-center items-center bg-red-400">You are offline</h1>
         <Header />
       </div>
       <div className="hidden md:flex flex-row ml-10 mt-5 gap-4">
@@ -210,6 +209,12 @@ export default function Home() {
               deletetask={() => handleRemove(index)}
               checked={task.checked}
               ischecked={() => handleCheck(index)}
+              editingTask={() => handleEdit(index)}
+              handleEditSubmit_edit={() => handleEditSubmit(index)}
+              newTaskName_edit={newTaskName}
+              newTaskDetails_edit={newTaskDetails}
+              setNewTaskDetails_edit={setNewTaskDetails}
+              setNewTaskName_edit={setNewTaskName}
             />
           </div>
         ))}
