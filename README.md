@@ -45,13 +45,13 @@ localhost:3003
 
 ## Screenshots Mobile
 
-<img src="readme/homescreen-mobile.png" alt="homescreen-mobile"/>
+<img width="200px" src="readme/homescreen-mobile.png" alt="homescreen-mobile"/>
 
-<img src="readme/pwaprompt.jpeg" alt="pwa-prompt"/>
+<img width="200px" src="readme/pwaprompt.jpeg" alt="pwa-prompt"/>
 
-<img src="readme/create-mobile.png" alt="create-mobile"/>
+<img width="200px" src="readme/create-mobile.png" alt="create-mobile"/>
 
-<img src="readme/task-mobile.png" alt="task-mobile"/>
+<img width="200px" src="readme/task-mobile.png" alt="task-mobile"/>
 
 ## Screenshots Desktop
 
