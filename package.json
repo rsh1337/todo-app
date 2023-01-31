@@ -13,6 +13,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.8",
+    "@loadable/component": "^5.15.3",
     "@next/font": "13.1.6",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
@@ -20,6 +21,7 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-ios-pwa-prompt": "^1.8.4",
     "sharp": "^0.31.3"
   },
   "devDependencies": {
