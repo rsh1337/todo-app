@@ -13,6 +13,7 @@ export default function Home() {
   const [newTaskName, setNewTaskName] = useState("");
   const [newTaskDetails, setNewTaskDetails] = useState("");
 
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
       const storedTasks = JSON.parse(localStorage.getItem("tasks"));
@@ -57,7 +58,14 @@ export default function Home() {
       return task;
     });
     setTasks(updatedTasks);
+    setNewTaskName("");
+    setNewTaskDetails("");
   };
+
+  const editCancel =() =>{
+    setNewTaskName("");
+    setNewTaskDetails("");
+  }
 
   const handleCheck = (index) => {
     const updatedTasks = tasks.map((task, i) => {
@@ -215,6 +223,7 @@ export default function Home() {
               newTaskDetails_edit={newTaskDetails}
               setNewTaskDetails_edit={setNewTaskDetails}
               setNewTaskName_edit={setNewTaskName}
+              editCancel={editCancel}
             />
           </div>
         ))}

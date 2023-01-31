@@ -2,10 +2,11 @@ import { Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure } from "@ch
 import { Disclosure, Transition } from '@headlessui/react'
 import { useState } from 'react'
 
-export default function Task({ name, details, deletetask, checked, ischecked, handleEditSubmit_edit, newTaskName_edit, setNewTaskName_edit, newTaskDetails_edit, setNewTaskDetails_edit }) {
+export default function Task({ name, details, deletetask, checked, editCancel, ischecked, handleEditSubmit_edit, newTaskName_edit, setNewTaskName_edit, newTaskDetails_edit, setNewTaskDetails_edit }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [isDeleting, setIsDeleting] = useState(false)
     const [isShowing, setIsShowing] = useState(false)
+    
 
     return (
         <div>
@@ -293,7 +294,6 @@ export default function Task({ name, details, deletetask, checked, ischecked, ha
                 <ModalOverlay />
                 <ModalContent>
                     <ModalBody>
-                        <form onSubmit={handleEditSubmit_edit}>
                             <div className="flex flex-col mt-5">
                                 <input
                                     className="focus:rounded-md focus:border-[0px] font-thin mx-7"
@@ -312,6 +312,7 @@ export default function Task({ name, details, deletetask, checked, ischecked, ha
                                 />
                             </div>
                             <div className="flex flex-row justify-between">
+                                <div onClick={editCancel}>
                                 <button
                                     className="bg-[#F6F6F6] py-[10px] px-2 text-sm font-medium rounded-md flex flex-row items-center transition-all ml-7 mt-3"
                                     type="button"
@@ -340,36 +341,23 @@ export default function Task({ name, details, deletetask, checked, ischecked, ha
                                     </svg>
                                     Cancel
                                 </button>
+                                </div>
+                                <div onClick={handleEditSubmit_edit}>
                                 <button
                                     className="bg-[#F6F6F6] py-[10px] px-2 text-sm font-medium rounded-md flex flex-row items-center transition-all mr-7 mt-3"
                                     type="submit"
                                     onClick={onClose}
                                 >
-                                    <svg
-                                        className="mr-1"
-                                        width="14"
-                                        height="14"
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M5.57666 10.9375C5.33749 10.9375 5.13916 10.7392 5.13916 10.5V7.58333C5.13916 7.34416 5.33749 7.14583 5.57666 7.14583C5.81583 7.14583 6.01416 7.34416 6.01416 7.58333V10.5C6.01416 10.7392 5.81583 10.9375 5.57666 10.9375Z"
-                                            fill="#575757"
-                                        />
-                                        <path
-                                            d="M6.99998 9.47917H4.08331C3.84415 9.47917 3.64581 9.28084 3.64581 9.04167C3.64581 8.8025 3.84415 8.60417 4.08331 8.60417H6.99998C7.23915 8.60417 7.43748 8.8025 7.43748 9.04167C7.43748 9.28084 7.23915 9.47917 6.99998 9.47917ZM4.66665 3.35417C4.42748 3.35417 4.22915 3.15584 4.22915 2.91667V1.16667C4.22915 0.927505 4.42748 0.729172 4.66665 0.729172C4.90581 0.729172 5.10415 0.927505 5.10415 1.16667V2.91667C5.10415 3.15584 4.90581 3.35417 4.66665 3.35417ZM9.33331 3.35417C9.09415 3.35417 8.89581 3.15584 8.89581 2.91667V1.16667C8.89581 0.927505 9.09415 0.729172 9.33331 0.729172C9.57248 0.729172 9.77081 0.927505 9.77081 1.16667V2.91667C9.77081 3.15584 9.57248 3.35417 9.33331 3.35417Z"
-                                            fill="#575757"
-                                        />
-                                        <path
-                                            d="M5.16251 13.3058C3.72168 13.3058 2.77084 12.9908 2.17584 12.3142C1.48751 11.5383 1.37668 10.3775 1.35334 9.34501L1.27751 5.74584C1.21918 2.98667 2.13501 1.83751 4.52668 1.65667L9.21668 1.56334H9.24001C11.6375 1.64501 12.5942 2.75334 12.6525 5.51834L12.7225 9.11751C12.7458 10.15 12.6758 11.3167 12.0225 12.1158C11.4275 12.845 10.4242 13.2008 8.86668 13.2358L5.36667 13.3058H5.16251ZM9.21668 2.43251L4.56751 2.52584C2.93418 2.65417 2.10001 3.17917 2.15251 5.72834L2.22834 9.32751C2.25168 10.5642 2.43251 11.2875 2.82918 11.7367C3.27251 12.2383 4.07168 12.46 5.35501 12.4308L8.85501 12.3608C10.1325 12.3375 10.9258 12.0808 11.3517 11.5617C11.7308 11.1008 11.8825 10.3717 11.8533 9.13501L11.7833 5.53584C11.725 2.99251 10.8733 2.49084 9.21668 2.43251Z"
-                                            fill="#575757"
-                                        />
+                                    <svg className="mr-1" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.5 9.25H2C1.59 9.25 1.25 8.91 1.25 8.5C1.25 8.09 1.59 7.75 2 7.75H11.5C11.91 7.75 12.25 8.09 12.25 8.5C12.25 8.91 11.91 9.25 11.5 9.25ZM8 17.25H6C5.59 17.25 5.25 16.91 5.25 16.5C5.25 16.09 5.59 15.75 6 15.75H8C8.41 15.75 8.75 16.09 8.75 16.5C8.75 16.91 8.41 17.25 8 17.25ZM14.5 17.25H10.5C10.09 17.25 9.75 16.91 9.75 16.5C9.75 16.09 10.09 15.75 10.5 15.75H14.5C14.91 15.75 15.25 16.09 15.25 16.5C15.25 16.91 14.91 17.25 14.5 17.25Z" fill="black" />
+                                        <path d="M17.56 21.25H6.44C2.46 21.25 1.25 20.05 1.25 16.11V7.89C1.25 3.95 2.46 2.75 6.44 2.75H14.5C14.91 2.75 15.25 3.09 15.25 3.5C15.25 3.91 14.91 4.25 14.5 4.25H6.44C3.3 4.25 2.75 4.79 2.75 7.89V16.1C2.75 19.2 3.3 19.74 6.44 19.74H17.55C20.69 19.74 21.24 19.2 21.24 16.1V12.02C21.24 11.61 21.58 11.27 21.99 11.27C22.4 11.27 22.74 11.61 22.74 12.02V16.1C22.75 20.05 21.54 21.25 17.56 21.25Z" fill="black" />
+                                        <path d="M15.521 11.438C15.131 11.438 14.761 11.298 14.501 11.028C14.181 10.708 14.041 10.248 14.111 9.768L14.311 8.348C14.361 7.988 14.581 7.558 14.831 7.308L18.541 3.598C20.011 2.128 21.291 2.968 21.931 3.598C22.561 4.228 23.401 5.508 21.931 6.988L18.221 10.698C17.961 10.958 17.531 11.168 17.181 11.218L15.761 11.418C15.681 11.428 15.601 11.438 15.521 11.438ZM20.231 4.278C20.031 4.278 19.851 4.418 19.601 4.658L15.901 8.368C15.8579 8.42929 15.8242 8.49671 15.801 8.568L15.601 9.918L16.961 9.728C17.0323 9.70485 17.0997 9.67114 17.161 9.628L20.871 5.918C21.341 5.448 21.411 5.188 20.871 4.658C20.611 4.398 20.421 4.278 20.231 4.278Z" fill="black" />
+                                        <path d="M20.868 7.742C20.798 7.742 20.728 7.732 20.668 7.712C19.9917 7.52016 19.3757 7.1585 18.8786 6.6614C18.3815 6.16431 18.0198 5.54832 17.828 4.872C17.7754 4.67976 17.8005 4.47457 17.8977 4.30062C17.995 4.12666 18.1567 3.99788 18.348 3.942C18.748 3.832 19.158 4.062 19.278 4.462C19.528 5.332 20.218 6.022 21.088 6.272C21.488 6.382 21.718 6.802 21.608 7.192C21.5578 7.34961 21.4593 7.48748 21.3266 7.58615C21.1938 7.68483 21.0334 7.73934 20.868 7.742Z" fill="black" />
                                     </svg>
                                     Edit
                                 </button>
+                                </div>
                             </div>
-                        </form>
                     </ModalBody>
                 </ModalContent>
             </Modal>
