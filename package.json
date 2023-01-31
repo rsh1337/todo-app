@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "next start -p 6969"
+    "start": "next start -p 3003",
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
