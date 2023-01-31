@@ -8,8 +8,8 @@ export default function App({ Component, pageProps }) {
     <ChakraProvider>
       <Component {...pageProps} />
       <PWAPrompt
-					copyTitle="Add to homescreen"
-					copyBody="This website has functionality like an app. Add it to your home screen for an even more immersive experience!"
+					copyTitle="Add to HomeScreen"
+					copyBody="This app can also be used offline. Add it to your home screen for a more immersive experience!"
 					copyShareButtonLabel="Press the 'Share' button."
 					copyAddHomeButtonLabel="Press the 'Add to homescreen' button."
 					copyClosePrompt="Close"
