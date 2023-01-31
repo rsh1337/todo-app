@@ -6,7 +6,4 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
-  images: {
-		domains: ['upload.wikimedia.org'],
-	},
 })
