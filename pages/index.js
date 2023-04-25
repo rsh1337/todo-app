@@ -7,6 +7,7 @@ import {
   Popover,
 } from "@chakra-ui/react";
 import CreateTaskModal from "../components/createtask";
+import Link from "next/link";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -121,6 +122,27 @@ export default function Home() {
           </svg>
           Delete Checked
         </button>
+        <Link href="https://weather.rares-andrei.me">
+        <button
+          className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
+        >
+          Check Weather
+        </button>
+        </Link>
+        <Link href="https://crypto.rares-andrei.me">
+        <button
+          className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
+        >
+          Crypto Prices
+        </button>
+        </Link>
+        <Link href="https://moviedb.rares-andrei.me">
+        <button
+          className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
+        >
+          Relax Movie
+        </button>
+        </Link>
       </div>
       <div className="fixed bottom-0 right-0 md:hidden">
         <Popover>
@@ -171,9 +193,10 @@ export default function Home() {
                 border={0}
                 shadow={0}
                 gap={2}
+                className="flex flex-col justify-center items-center"
               >
                 <button
-                  className="bg-[#F6F6F6] rounded-full p-3"
+                  className="bg-[#F6F6F6] rounded-full p-3 w-max"
                   onClick={handleDeleteChecked}
                 >
                   <svg
@@ -201,7 +224,30 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+                <div>
                 <CreateTaskModal handleSubmit_create={handleSubmit} newTaskName_create={newTaskName} newTaskDetails_create={newTaskDetails} setNewTaskDetails_create={setNewTaskDetails} setNewTaskName_create={setNewTaskName} />
+                </div>
+                <Link href="https://weather.rares-andrei.me">
+        <button
+          className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
+        >
+          Check Weather
+        </button>
+        </Link>
+        <Link href="https://crypto.rares-andrei.me">
+        <button
+          className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
+        >
+          Crypto Prices
+        </button>
+        </Link>
+        <Link href="https://moviedb.rares-andrei.me">
+        <button
+          className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
+        >
+          Relax Movie
+        </button>
+        </Link>
               </PopoverContent>
             </>
           )}
