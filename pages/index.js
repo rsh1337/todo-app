@@ -136,11 +136,11 @@ export default function Home() {
           Crypto Prices
         </button>
         </Link>
-        <Link href="https://moviedb.rares-andrei.me">
+        <Link href="https://ticket.rares-andrei.me">
         <button
           className="bg-[#F6F6F6] rounded-lg p-2 flex flex-row items-center gap-2 text-sm"
         >
-          Relax Movie
+          Tickets App
         </button>
         </Link>
       </div>
