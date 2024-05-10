@@ -10,24 +10,24 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@headlessui/react": "^1.7.18",
-    "@loadable/component": "^5.16.3",
-    "@next/font": "14.1.0",
-    "eslint": "8.56.0",
-    "eslint-config-next": "14.1.0",
-    "framer-motion": "^11.0.5",
-    "next": "14.1.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@headlessui/react": "^2.0.3",
+    "@loadable/component": "^5.16.4",
+    "@next/font": "14.2.3",
+    "eslint": "9.2.0",
+    "eslint-config-next": "14.2.3",
+    "framer-motion": "^11.1.9",
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-ios-pwa-prompt": "^1.8.4",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.19",
     "next-pwa": "^5.6.0",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
   }
 }
